@@ -55,10 +55,10 @@ $("#age-filter-btn").click(function () {
   var filterAge = parseInt($("#age-filter").val());
   $("table tbody tr").each(function () {
     var age = parseInt($(this).find("td:last-child").text());
-    if (age == filterAge) {
-      $(this).addClass("highlight");
+    if (age < filterAge) {
+      $(this).hide();
     } else {
-      $(this).removeClass("highlight");
+      $(this).show();
     }
   });
 });
